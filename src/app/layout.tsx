@@ -72,8 +72,7 @@ function MaintenancePage() {
         marginBottom: '40px',
         lineHeight: 1.6,
       }}>
-        Kami sedang melakukan pemeliharaan untuk memberikan pengalaman yang lebih baik.
-        Silakan kembali dalam beberapa saat.
+        KALAU MAU WEB INI BISA , HUBUNGI WA KU
       </p>
 
       {/* Loading Bar */}
