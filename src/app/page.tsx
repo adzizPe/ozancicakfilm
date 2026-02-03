@@ -56,9 +56,15 @@ async function getBonusContent() {
 }
 
 export default async function HomePage() {
+  const homeDataPromise = getHomeData();
+  const bonusContentPromise = getBonusContent().catch(err => {
+    console.error('Bonus content failed:', err);
+    return { indoItems: [], otherItems: [] };
+  });
+
   const [homeDataResults, { indoItems, otherItems }] = await Promise.all([
-    getHomeData(),
-    getBonusContent()
+    homeDataPromise,
+    bonusContentPromise
   ]);
 
   // Distribute bonus items into categories

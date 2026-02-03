@@ -12,13 +12,12 @@ export default function ContentCard({ item, priority = false }: ContentCardProps
     return (
         <Link href={`/detail/${item.detailPath}`} className={styles.card}>
             <div className={styles.imageWrapper}>
-                <Image
+                <img
                     src={item.poster}
                     alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className={styles.image}
-                    priority={priority}
+                    loading={priority ? "eager" : "lazy"}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                 />
                 <div className={styles.overlay}>
                     <div className={styles.playButton}>

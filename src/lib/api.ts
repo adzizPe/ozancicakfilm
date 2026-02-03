@@ -5,15 +5,19 @@ const API_BASE_URL = 'https://zeldvorik.ru/apiv3/api.php';
 // Fetch content by category
 export async function getCategory(category: CategoryType, page: number = 1): Promise<ContentListResponse> {
     try {
+        console.log(`Fetching category: ${category}, page: ${page}`);
         const res = await fetch(`${API_BASE_URL}?action=${category}&page=${page}`, {
             next: { revalidate: 3600 } // Cache for 1 hour
         });
 
         if (!res.ok) {
+            console.error(`Fetch failed for ${category}: ${res.status} ${res.statusText}`);
             throw new Error(`Failed to fetch ${category}`);
         }
 
-        return res.json();
+        const data = await res.json();
+        console.log(`Success fetch ${category}: found ${data.items?.length || 0} items`);
+        return data;
     } catch (error) {
         console.error(`Error fetching ${category}:`, error);
         return { success: false, items: [], page: 1, hasMore: false };
