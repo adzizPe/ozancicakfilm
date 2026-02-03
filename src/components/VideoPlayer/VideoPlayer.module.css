@@ -1,0 +1,84 @@
+.playerWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+/* Mobile: Make player taller */
+@media (max-width: 640px) {
+    .playerWrapper {
+        border-radius: 0;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        width: calc(100% + 3rem);
+    }
+}
+
+.player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Fullscreen state */
+.playerWrapper.fullscreen {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.playerWrapper.fullscreen .player {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Fullscreen Button */
+.fullscreenBtn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    color: white;
+    opacity: 0;
+    transition: all var(--transition-fast);
+    z-index: 10;
+}
+
+.playerWrapper:hover .fullscreenBtn {
+    opacity: 1;
+}
+
+/* Always show on mobile */
+@media (max-width: 768px) {
+    .fullscreenBtn {
+        opacity: 1;
+        bottom: 8px;
+        right: 8px;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.fullscreenBtn:hover {
+    background: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.fullscreenBtn svg {
+    width: 20px;
+    height: 20px;
+}

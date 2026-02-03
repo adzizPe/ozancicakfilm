@@ -1,0 +1,144 @@
+/* Hero Skeleton */
+.heroSkeleton {
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
+    max-height: 800px;
+    background: var(--color-bg-secondary);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 1.5rem 4rem;
+}
+
+.heroContent {
+    max-width: 600px;
+}
+
+.skeletonBadge {
+    width: 100px;
+    height: 32px;
+    margin-bottom: 1rem;
+}
+
+.skeletonTitle {
+    width: 80%;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+.skeletonMeta {
+    width: 200px;
+    height: 24px;
+    margin-bottom: 1rem;
+}
+
+.skeletonDesc {
+    width: 100%;
+    height: 72px;
+    margin-bottom: 1.5rem;
+}
+
+.skeletonActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.skeletonBtn {
+    width: 160px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+}
+
+/* Row Skeleton */
+.rowSkeleton {
+    padding: 2rem 0;
+}
+
+.skeletonRowTitle {
+    width: 200px;
+    height: 32px;
+    margin: 0 1.5rem 1rem;
+}
+
+.skeletonCards {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    overflow: hidden;
+}
+
+/* Card Skeleton */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .cardsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cardsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .cardsGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.cardSkeleton {
+    flex: 0 0 auto;
+    width: calc(50% - 0.5rem);
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .cardSkeleton {
+        width: calc(33.333% - 0.667rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cardSkeleton {
+        width: calc(25% - 0.75rem);
+    }
+}
+
+@media (min-width: 1280px) {
+    .cardSkeleton {
+        width: calc(20% - 0.8rem);
+    }
+}
+
+.cardsGrid .cardSkeleton {
+    width: 100%;
+}
+
+.skeletonImage {
+    aspect-ratio: 2/3;
+    width: 100%;
+}
+
+.skeletonInfo {
+    padding: 0.875rem;
+}
+
+.skeletonCardTitle {
+    width: 80%;
+    height: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.skeletonCardMeta {
+    width: 60%;
+    height: 16px;
+}
